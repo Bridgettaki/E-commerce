@@ -36,7 +36,7 @@ export default function LoginPage() {
         localStorage.setItem("user", JSON.stringify(data.user));
         navigate("/home");
       }
-    } catch {
+    } catch (err) {
       setError("Network error. Try again.");
     } finally {
       setLoading(false);
@@ -45,10 +45,13 @@ export default function LoginPage() {
 
   return (
     <div className="login-container">
+      <div className="bg-shape one" />
+      <div className="bg-shape two" />
+
       <div className="laptop-frame">
         <div className="login-box">
           <h1>Hello</h1>
-          <h2>Welcome!</h2>
+          <h2>Welcome back!</h2>
 
           <form onSubmit={handleSubmit}>
             <input
@@ -72,9 +75,28 @@ export default function LoginPage() {
 
           {error && <p style={{ color: "crimson", marginTop: 12 }}>{error}</p>}
 
-          <p style={{ marginTop: 10 }}>
-            Don't have an account? <Link to="/register">Sign up</Link>
-          </p>
+          {/* ✅ styled with .forgot-password */}
+          <div className="forgot-password">
+            <Link to="/register">Don&apos;t have an account? Sign up</Link>
+          </div>
+
+          {/* ✅ styled with .social-login */}
+          <div className="social-login">
+            <button disabled>
+              <img
+                src="https://www.svgrepo.com/show/475656/google-color.svg"
+                alt="G"
+              />
+              Google
+            </button>
+            <button disabled>
+              <img
+                src="https://www.svgrepo.com/show/349553/facebook.svg"
+                alt="F"
+              />
+              Facebook
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,3 +1,4 @@
+/* Container for login + register */
 .login-container {
   display: flex;
   justify-content: center;
@@ -8,20 +9,21 @@
   position: relative;
 }
 
+/* Laptop frame (outer box) */
 .laptop-frame {
-  width: 1295px;   
-  height: 620px;   
+  width: 1295px;
+  height: 620px;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto; /* scroll if content overflows */
+  overflow: auto;
   position: relative;
 }
 
-/* Login box inside */
+/* Inner box */
 .login-box {
   background: #fff;
   border-radius: 20px;
@@ -32,7 +34,7 @@
   z-index: 2;
 }
 
-/* Same styling as before for form */
+/* Headings */
 .login-box h1 {
   text-align: center;
   font-size: 2rem;
@@ -49,6 +51,7 @@
   margin-bottom: 1.5rem;
 }
 
+/* Forms */
 .login-box form {
   display: flex;
   flex-direction: column;
@@ -86,18 +89,22 @@
 }
 
 /* Links */
-.forgot-password {
+.forgot-password,
+.signup {
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
 }
 
-.forgot-password a {
-  font-size: 0.85rem;
+.forgot-password a,
+.signup a {
   color: #ff5722;
+  font-weight: bold;
   text-decoration: none;
 }
 
-.forgot-password a:hover {
+.forgot-password a:hover,
+.signup a:hover {
   text-decoration: underline;
 }
 
@@ -131,21 +138,6 @@
   height: 20px;
 }
 
-.signup {
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.signup a {
-  color: #ff5722;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.signup a:hover {
-  text-decoration: underline;
-}
-
 /* Decorations */
 .bg-shape {
   position: absolute;
@@ -168,19 +160,14 @@
   right: -80px;
 }
 
-/* ------------------------- */
-/* 📱 RESPONSIVE ADJUSTMENTS */
-/* ------------------------- */
-
-/* Large screens (bigger desktops) */
+/* Responsive */
 @media (min-width: 1600px) {
   .laptop-frame {
-    width: 80%;   /* scale with screen */
+    width: 80%;
     height: 70%;
   }
 }
 
-/* Medium screens (tablets/laptops) */
 @media (max-width: 1024px) {
   .laptop-frame {
     width: 90%;
@@ -189,7 +176,6 @@
   }
 }
 
-/* Small screens (phones) */
 @media (max-width: 768px) {
   .laptop-frame {
     width: 100%;
